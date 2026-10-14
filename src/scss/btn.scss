@@ -1,0 +1,104 @@
+// --- МАЁ ---
+.btn {
+   font-family: $ffAccent;
+   //    padding: 12px 10px;
+   //    min-width: 150px;
+
+   // font-size: inherit;
+   //    font-weight: 600;
+   //    border: 2px solid $baseGreen;
+   //    border-radius: 10px;
+
+   //    // background: hsl(112, 28%, 55%);
+}
+// --- 1 ВАРИК ---
+// .btn {
+//    font-family: $ffAccent;
+//    display: block;
+//    padding: 12px 18px;
+//    min-width: 160px;
+//    margin: 0 auto;
+//    font-size: inherit;
+//    font-weight: 600;
+//    background: $baseGreen;
+//    color: #ffffff;
+//    border: none;
+//    border-radius: 10px;
+//    box-shadow: 8px 8px 15px #aaa, -8px -8px 15px #ffffff;
+// }
+// --- 2 ВАРИК ---
+// .btn {
+//    font-family: $ffAccent;
+//    padding: 12px 15px;
+//    min-width: 160px;
+//    margin: 0 auto;
+//    font-size: inherit;
+//    font-weight: 600;
+//    background: #fff;
+//    color: $baseGreen;
+//    border: 2px solid $baseGreen;
+//    border-radius: 6px;
+//    text-transform: uppercase;
+//    letter-spacing: 1px;
+//    transition: all 0.3s ease-in-out;
+// }
+// .btn:hover {
+//    background: $baseGreen;
+//    color: #fff;
+// }
+// --- 3 ВАРИК ---
+// .btn {
+//    font-family: $ffAccent;
+//    display: block;
+//    padding: 12px 20px;
+//    min-width: 150px;
+//    margin: 0 auto;
+//    font-size: 16px;
+//    font-weight: 600;
+//    background: linear-gradient(90deg, $baseGreen, #32cd32);
+//    color: white;
+//    border: none;
+//    border-radius: 12px;
+//    transition: background 0.3s ease-in-out;
+// }
+// .btn:hover {
+//    background: linear-gradient(90deg, #228b22, #6b8e23);
+// }
+// --- 4 ВАРИК ---
+// .btn {
+//    font-family: $ffAccent;
+//    display: block;
+//    padding: 12px 20px;
+//    min-width: 160px;
+//    margin: 0 auto;
+//    font-size: inherit;
+//    font-weight: 600;
+//    background: #e0e0e0;
+//    color: $baseGreen;
+//    border: none;
+//    border-radius: 10px;
+//    box-shadow: 8px 8px 15px #ccc, -8px -8px 15px #fff;
+//    transition: all 0.3s ease-in-out;
+// }
+// .btn:hover {
+//    box-shadow: inset 8px 8px 15px #ccc, inset -8px -8px 15px #fff;
+// }
+// --- 5 ВАРИК ---
+.btn {
+   padding: 11px 15px;
+   min-width: 150px;
+   font-size: inherit;
+   font-weight: 600;
+   background: white;
+   color: $baseGreen;
+   border: 2px solid $baseGreen;
+   border-radius: 8px;
+   text-transform: uppercase;
+   letter-spacing: 0.3px;
+   transition: color, background 0.2s;
+   &:hover,
+   &:focus {
+      background: $baseGreen;
+      color: white;
+   }
+}

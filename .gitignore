@@ -1,0 +1,11 @@
+.vscode/
+
+conditions & old info/
+html backups/
+data/Old/
+src/js/script backup.js
+
+node_modules/
+
+Thumbs.db
+desktop.ini

@@ -1,0 +1,98 @@
+.catalog {
+   padding-bottom: 80px;
+   &__title {
+      // padding-left: 50px;
+      font-weight: 700;
+      font-family: $ffAccent;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 60px;
+   }
+
+   &__row {
+      display: flex;
+      flex-wrap: wrap;
+      // margin: 0 -12px;
+      margin: 0 -10px;
+   }
+
+   &__card {
+      flex: 0 1 25%;
+      // padding: 0 12px;
+      padding: 0 10px;
+      // margin-bottom: 24px;
+      margin-bottom: 20px;
+      transition: opacity 0.1s;
+      &:hover,
+      &:focus {
+         // opacity: 0.95;
+         .catalog__card-link {
+            box-shadow: hsl(0, 0%, 80%) 0 0 25px 0;
+            // box-shadow: hsla(113, 27%, 40%, 0.5) 0 0 25px 0;
+         }
+         .catalog__card-img {
+            img {
+               transform: scale(104%);
+            }
+         }
+      }
+   }
+
+   &__card-link {
+      box-shadow: hsl(0, 0%, 78%) 0 1px 10px;
+      transition: box-shadow 0.2s;
+      display: block;
+      padding: 0 0 30px;
+      // border: 2px solid hsl(0, 0%, 85%);
+      border-radius: 15px;
+      background: white;
+   }
+
+   &__card-img {
+      margin-bottom: 10px;
+      overflow: hidden;
+      border-radius: 15px;
+      height: 242px;
+      img {
+         height: 100%;
+         width: 100%;
+         object-fit: contain;
+         object-position: center;
+         transition: transform 0.2s;
+      }
+   }
+
+   &__text {
+      padding: 0 10px;
+   }
+
+   &__card-title {
+      font-size: 21px;
+      text-align: center;
+      font-family: $ffBase;
+      font-weight: 700;
+      // margin-bottom: 15px;
+   }
+
+   &__card-more-btn {
+      text-align: right;
+   }
+}
+
+//---------------------------АДАПТИВ---------------------------
+
+@media (max-width: $md2) {
+   .catalog__card {
+      flex: 0 1 50%; // 2 колонки
+   }
+}
+
+@media (max-width: $md3) {
+   .catalog__title {
+      font-size: 28px;
+      margin-bottom: 40px;
+   }
+   .catalog__card {
+      flex: 0 1 100%; // 1 колонка
+   }
+}

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "reset";
+//-------------FONTS--------------
+// $ffBase: "Montserrat", serif;
+$ffBase: "Roboto", serif;
+$ffAccent: "Open Sans", serif;
+// $ffAccent: "Playfair Display", serif;
+// $ffAccent: "PT Serif", serif;
+// $ffAccent: "Merriweather", serif;
+// $ffHighlighting: "Oswald", serif;
+$ffHighlighting: "Rubik", serif;
+// $ffHighlighting: "Raleway", serif;
+//-------------COLORS-------------
+// $darkGreen: #334f41;
+// $altGreen: #3a5a40;
+// $lightGreen: #a3b18a;
+// $midGreen: #588157;
+// $lightGrey: #a3a3a3;
+// $altGrey: #969ca6;
+// $white: #ffffff;
+// $darkGrey: #666666;
+// $black: #2b2b2b;
+$black: hsl(0, 0%, 15%);
+$white: hsl(0, 0%, 99%);
+$lightGrey: hsl(0, 0%, 95%);
+$grey: hsl(0, 0%, 80%);
+$darkGrey: hsl(0, 0%, 60%);
+$darkDarkGrey: hsl(0, 0%, 40%);
+$baseGreen: #518349;
+$lightGreen: #63a659;
+//-------------OTHER--------------
+$containerMaxWidth: calc(1170px + 30px);
+
+$md1: calc($containerMaxWidth + 15px);
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 575.98px;
+$md5: 424.98px;
+
+@mixin container-media($vp_mw, $c_mw) {
+   @media (max-width: $vp-mw) {
+      max-width: $c-mw;
+   }
+}
+//--------------------------------
+body {
+   background-color: $lightGrey;
+   font-family: $ffBase;
+   font-size: 16px;
+   color: #2b2b2b;
+   &._lock {
+      overflow: hidden;
+   }
+}
+.container {
+   max-width: $containerMaxWidth;
+   padding: 0 20px;
+   margin: 0 auto;
+   @include container-media($md1, 1139px);
+   @include container-media($md2, 960px);
+   @include container-media($md3, 720px);
+   @include container-media($md4, 540px);
+   @include container-media($md5, 370px);
+   @media (max-width: $md3) {
+      padding: 0 15px;
+   }
+}
+a {
+   color: inherit;
+}
+picture {
+   display: block;
+}
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.main {
+   flex: 1 1 auto;
+   // background-color: #f2f2f2;
+}
+//--------------------------------
+@import "logo";
+@import "contact";
+@import "header";
+@import "footer";
+@import "btn";
+@import "breadcrumbs";
+@import "tabs";
+//--------------------------------
+@import "catalog";
+@import "catalog-products";
+@import "catalog-products-dialog";

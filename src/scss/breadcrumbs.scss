@@ -1,0 +1,30 @@
+.breadcrumbs {
+   padding: 25px 0 20px;
+}
+.breadcrumbs-list {
+   display: flex;
+   &__item {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      &:not(:first-child) {
+         &::before {
+            content: ">";
+            margin: -5px 0;
+            font-size: 18px;
+            padding: 0 10px;
+         }
+      }
+      &:last-child {
+         color: $darkGrey;
+      }
+   }
+
+   &__link {
+      transition: color 0.2s;
+      &:hover,
+      &:focus {
+         color: $baseGreen;
+      }
+   }
+}

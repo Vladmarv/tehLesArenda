@@ -1,0 +1,57 @@
+.logo {
+   font-size: 24px;
+   font-family: $ffHighlighting;
+   &__link {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      padding: 15px;
+      margin: -15px;
+      span {
+         color: $baseGreen;
+         // color: hsl(119, 35%, 42%);
+      }
+   }
+}
+// -----Анимация которая выглядит колхозно-----
+// @keyframes float-slow {
+//    0% {
+//       transform: translateY(0);
+//    }
+//    50% {
+//       transform: translateY(-3px);
+//    }
+//    100% {
+//       transform: translateY(0);
+//    }
+// }
+// .logo__link img {
+//    transform-origin: center;
+//    animation: float-slow 3s ease-in infinite;
+//    will-change: transform;
+// }
+
+@media (max-width: $md3) {
+   .header {
+      .logo {
+         font-size: 21px;
+         &__link {
+            img {
+               transform: scale(0.875);
+               margin: -1.5px;
+            }
+         }
+      }
+   }
+}
+/* Accessibility: disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+   .logo {
+      &__link {
+         img {
+            animation: none !important;
+            transition: none !important;
+         }
+      }
+   }
+}

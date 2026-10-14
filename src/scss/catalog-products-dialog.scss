@@ -1,0 +1,215 @@
+.catalog-products-dialog-container {
+   box-shadow: 0px 0px 30px 15px $black inset;
+   position: fixed;
+   inset: 0;
+   z-index: 2;
+   display: flex;
+   transition: opacity 0.2s ease, visibility 0s linear 0s;
+   opacity: 1;
+   visibility: visible;
+   &[aria-hidden="true"] {
+      transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+.catalog-products-dialog-overlay {
+   position: fixed;
+   inset: 0;
+   background-color: #2b2e38e6;
+}
+
+.catalog-products-dialog {
+   box-shadow: 0px 0px 15px 7.5px $black;
+   border: 1px solid $darkGrey;
+   margin: auto;
+   z-index: 2;
+   position: relative;
+   background-color: white;
+   width: 83vw;
+   height: 89vh;
+   border-radius: 10px;
+   // width: 1540px;
+   // height: 845px;
+
+   &__content-wrapper {
+      height: 100%;
+      overflow-y: scroll;
+      margin-right: 10px;
+      border-radius: 10px;
+   }
+
+   &__close-btn {
+      position: absolute;
+      top: -36px;
+      right: -36px;
+      z-index: 3;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      box-sizing: content-box;
+
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         width: 70%;
+         height: 2px;
+         background: $lightGrey;
+         transform-origin: center;
+         transform: translate(-50%, -50%);
+         pointer-events: none;
+         border-radius: 1px;
+      }
+
+      &::before {
+         transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &::after {
+         transform: translate(-50%, -50%) rotate(-45deg);
+      }
+   }
+   &__img {
+      border: 1px solid $lightGrey;
+      flex: 0 1 45%;
+      // width: 80%;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+   }
+   &__content-header {
+      display: flex;
+      padding: 50px;
+   }
+   &__body {
+      flex: 0 1 50%;
+      padding: 8px 50px 30px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   &__title {
+      font-weight: 600;
+      font-family: $ffAccent;
+      font-size: 32px;
+      margin-bottom: 15px;
+   }
+   &__subtitle {
+      padding-left: 3px;
+      color: grey;
+      margin-bottom: 35px;
+   }
+   &__desc-list-wrapper {
+      flex: 1 1 auto;
+      margin-bottom: 30px;
+      width: 100%;
+   }
+   &__description,
+   &__desc-list {
+      // color: hsl(0, 0%, 50%);
+      color: $black;
+      line-height: 1.5;
+      background-color: hsl(0, 0%, 95%);
+      padding: 20px 20px;
+      border-radius: 8px;
+   }
+   &__btn {
+      align-self: center;
+      padding: 17px 25px;
+   }
+   &__tabs {
+      margin-top: 18px;
+      padding: 0 50px;
+      li {
+         padding: 6px 0;
+         color: #555;
+         strong {
+            color: #222;
+            font-weight: 600;
+         }
+      }
+   }
+}
+
+/* Мобильная адаптация — табы могут скроллиться */
+
+// @media (max-width: 640px) {
+//    .catalog-products-dialog__tabs {
+//       .tabs {
+//          gap: 12px;
+//          overflow-x: auto;
+//          -webkit-overflow-scrolling: touch;
+//          padding-bottom: 8px;
+//       }
+//       .tabs__tab {
+//          padding: 10px 6px;
+//          font-size: 14px;
+//       }
+//    }
+// }
+
+//---------------------------АДАПТИВ---------------------------
+
+@media (max-width: $md2) {
+   .catalog-products-dialog {
+      width: 90vw;
+      height: 90vh;
+   }
+
+   .catalog-products-dialog__content-header {
+      flex-direction: column;
+      padding: 25px;
+   }
+
+   .catalog-products-dialog__img {
+      flex: 0 1 auto;
+      height: 250px; // Фиксированная высота для области изображения
+      margin-bottom: 20px;
+   }
+
+   .catalog-products-dialog__body {
+      flex: 0 1 auto;
+      padding: 0;
+      align-items: center;
+      text-align: center;
+   }
+
+   .catalog-products-dialog__tabs {
+      padding: 0 25px;
+   }
+}
+
+@media (max-width: $md3) {
+   .catalog-products-dialog {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      border: none;
+   }
+
+   .catalog-products-dialog__close-btn {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      &::before,
+      &::after {
+         background: $white;
+      }
+   }
+
+   .catalog-products-dialog__title {
+      font-size: 24px;
+   }
+}
